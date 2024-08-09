@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="com.solvd.carina.demo.APISampleTest" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="com.solvd.carina.demo.APISampleTest" time="11.61">
+    <testcase name="testDeleteUsers" classname="com.solvd.carina.demo.APISampleTest" time="1.502"/>
+    <testcase name="testGetUsers" classname="com.solvd.carina.demo.APISampleTest" time="1.683"/>
+    <testcase name="testCreateUser" classname="com.solvd.carina.demo.APISampleTest" time="6.607"/>
+    <testcase name="testCreateUserMissingSomeFields" classname="com.solvd.carina.demo.APISampleTest" time="1.818"/>
+  </testsuite>
+</testrun>

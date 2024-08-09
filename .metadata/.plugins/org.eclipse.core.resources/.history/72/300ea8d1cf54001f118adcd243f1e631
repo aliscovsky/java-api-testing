@@ -1,0 +1,7 @@
+package com.solvd.carina.demo;
+
+import com.solvd.carina.demo.api.GetUserMethods;
+
+public class GetEmployeesMethods extends GetUserMethods {
+
+}
