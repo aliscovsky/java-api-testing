@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="methods" data-provider-thread-count="1" name="Failed suite [Carina Demo Tests - API Sample]" guice-stage="DEVELOPMENT">
+  <parameter name="jenkinsJobName" value="API-Demo-Test"/>
+  <parameter name="jenkinsEnvironments" value="DEMO"/>
+  <parameter name="jenkinsSlackChannels" value="slack-test,slack-test2"/>
+  <parameter name="jenkinsRegressionPipeline" value="api_regression, full_regression"/>
+  <parameter name="jenkinsJobType" value="api"/>
+  <parameter name="jenkinsJobExecutionMode" value="continue"/>
+  <parameter name="suiteOwner" value="qpsdemo"/>
+  <parameter name="jenkinsRegressionScheduling_api_regression" value="H 2 * * *"/>
+  <test thread-count="5" parallel="methods" name="User API tests(failed)">
+    <classes>
+      <class name="com.solvd.carina.demo.APITests">
+        <methods>
+          <include name="testGetEmployee"/>
+          <include name="onCarinaAfterMethod"/>
+        </methods>
+      </class> <!-- com.solvd.carina.demo.APITests -->
+    </classes>
+  </test> <!-- User API tests(failed) -->
+</suite> <!-- Failed suite [Carina Demo Tests - API Sample] -->
