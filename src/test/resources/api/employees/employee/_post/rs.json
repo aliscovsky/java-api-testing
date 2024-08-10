@@ -1,0 +1,9 @@
+{
+	"status": "success"
+	"data":	{
+		  "employee_name": "${name}",
+		  "employee_salary": "${salary}",
+		  "employee_age": "${age}",
+		  "id": "regex:[\\d]"
+	}
+}

@@ -2,6 +2,7 @@ package com.solvd.carina.demo;
 
 import java.lang.invoke.MethodHandles;
 import java.time.temporal.ChronoUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.slf4j.Logger;
@@ -11,6 +12,8 @@ import org.testng.annotations.Test;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.solvd.carina.demo.api.GetEmployeeMethods;
 import com.solvd.carina.demo.api.GetEmployeesMethods;
+import com.solvd.carina.demo.api.PostEmployeeMethods;
+import com.solvd.carina.demo.api.PostUserMethod;
 import com.zebrunner.carina.api.APIMethodPoller;
 import com.zebrunner.carina.api.apitools.validation.JsonComparatorContext;
 import com.zebrunner.carina.api.apitools.validation.JsonCompareKeywords;
@@ -43,6 +46,17 @@ public class APITests implements IAbstractTest {
                 .<Integer>withPredicate("idPredicate", id -> id == Integer.valueOf(employeeId).intValue());
         getEmployeeMethod.validateResponse(comparatorContext);
         getEmployeeMethod.validateResponseAgainstSchema("api/employees/employee/_get/rs.schema");
+    }
+    
+    @Test()
+    @MethodOwner(owner = "aliscovsky")
+    public void testCreateEmployee() throws Exception {
+        LOGGER.info("test");
+        setCases("");
+        PostEmployeeMethods api = new PostEmployeeMethods();
+        api.setProperties("api/employees/employee/employee.properties");
+        api.callAPIExpectSuccess();
+        api.validateResponse();
     }
 
 }
