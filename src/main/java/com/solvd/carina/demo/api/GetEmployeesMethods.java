@@ -9,12 +9,12 @@ import com.zebrunner.carina.api.http.HttpResponseStatusType;
 import com.zebrunner.carina.utils.config.Configuration;
 
 //I need to configure the base_url here
-@Endpoint(url = "https://dummy.restapiexample.com/api/v1/employees", methodType = HttpMethodType.GET)
+@Endpoint(url = "${base_url}/api/v1/employees", methodType = HttpMethodType.GET)
 @ResponseTemplatePath(path = "api/employees/_get/rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
 public class GetEmployeesMethods extends AbstractApiMethodV2 {
 
     public GetEmployeesMethods() {
-    	replaceUrlPlaceholder("base_url", Configuration.getRequired("api_url"));
+    	replaceUrlPlaceholder("base_url", Configuration.getRequired("employees_api_url"));
     }
 }
