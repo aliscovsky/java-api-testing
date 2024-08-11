@@ -16,6 +16,7 @@ import com.solvd.carina.demo.api.GetEmployeeMethods;
 import com.solvd.carina.demo.api.GetEmployeesMethods;
 import com.solvd.carina.demo.api.PostEmployeeMethods;
 import com.solvd.carina.demo.api.PostUserMethod;
+import com.solvd.carina.demo.api.PutEmployeeMethods;
 import com.zebrunner.carina.api.APIMethodPoller;
 import com.zebrunner.carina.api.apitools.validation.JsonComparatorContext;
 import com.zebrunner.carina.api.apitools.validation.JsonCompareKeywords;
@@ -69,6 +70,22 @@ public class APITests implements IAbstractTest {
         deleteEmployeeMethods.setProperties("api/employees/employee/employee.properties");
         deleteEmployeeMethods.callAPIExpectSuccess();
         deleteEmployeeMethods.validateResponse();
+    }
+    
+    @Test()
+    @MethodOwner(owner = "aliscovsky")
+    public void testUpdateEmployee() {
+    	String employeeId = "1";
+    	
+        PutEmployeeMethods updateEmployeeMethods = new PutEmployeeMethods(employeeId);
+        updateEmployeeMethods.setProperties("api/employees/employee/employee.properties");
+        updateEmployeeMethods.callAPIExpectSuccess();
+        
+        JsonComparatorContext comparatorContext = JsonComparatorContext.context()
+                .<Integer>withPredicate("idPredicate", id -> id == Integer.valueOf(employeeId).intValue());
+        updateEmployeeMethods.validateResponse(comparatorContext);
+        
+        updateEmployeeMethods.validateResponse();
     }
 
 }

@@ -17,8 +17,11 @@
 		<classes>
 			<class name="com.solvd.carina.demo.APITests" />
 				<methods>
-
+	                <include name="testGetEmployee"/>
+	                <include name="testGetEmployees"/>
+	                <include name="testCreateEmployee"/>
 	                <include name="testDeleteEmployee"/>
+	                <include name="testUpdateEmployee"/>
             	</methods>
 		</classes>
 	</test>
