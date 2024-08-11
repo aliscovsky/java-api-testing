@@ -1,9 +1,10 @@
 {
-	"status": "success"
+	"status": "success",
 	"data":	{
 		  "employee_name": "${name}",
 		  "employee_salary": "${salary}",
 		  "employee_age": "${age}",
 		  "id": "regex:[\\d]"
-	}
+	},
+	"message": "Successfully! Record has been added."
 }

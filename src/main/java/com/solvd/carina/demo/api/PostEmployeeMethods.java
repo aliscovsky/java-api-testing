@@ -9,10 +9,10 @@ import com.zebrunner.carina.api.http.HttpMethodType;
 import com.zebrunner.carina.api.http.HttpResponseStatusType;
 import com.zebrunner.carina.utils.config.Configuration;
 
-@Endpoint(url = "${base_url}/api/v1/employees", methodType = HttpMethodType.POST)
+@Endpoint(url = "${base_url}/api/v1/create", methodType = HttpMethodType.POST)
 @RequestTemplatePath(path = "api/employees/employee/_post/rq.json")
 @ResponseTemplatePath(path = "api/employees/employee/_post/rs.json")
-@SuccessfulHttpStatus(status = HttpResponseStatusType.CREATED_201)
+@SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
 public class PostEmployeeMethods extends AbstractApiMethodV2 {
 
     public PostEmployeeMethods() {
