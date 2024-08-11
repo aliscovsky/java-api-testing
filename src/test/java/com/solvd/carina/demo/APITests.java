@@ -30,7 +30,10 @@ public class APITests implements IAbstractTest {
 
     @Test()
     @MethodOwner(owner = "aliscovsky")
+    
     public void testGetEmployees() {
+    	setCases("ANDK-368");
+    	
         GetEmployeesMethods getEmployeesMethods = new GetEmployeesMethods();
         getEmployeesMethods.callAPIExpectSuccess();
         getEmployeesMethods.validateResponse(JSONCompareMode.STRICT, JsonCompareKeywords.ARRAY_CONTAINS.getKey() + "data");
@@ -40,6 +43,8 @@ public class APITests implements IAbstractTest {
     @Test()
     @MethodOwner(owner = "aliscovsky")
     public void testGetEmployee() {
+    	setCases("ANDK-369");
+    	
     	String employeeId = "1";
     	
         GetEmployeeMethods getEmployeeMethod = new GetEmployeeMethods(employeeId);
@@ -54,7 +59,8 @@ public class APITests implements IAbstractTest {
     @Test()
     @MethodOwner(owner = "aliscovsky")
     public void testCreateEmployee() throws Exception {
-        LOGGER.info("test");
+    	setCases("ANDK-370");
+    	
         PostEmployeeMethods api = new PostEmployeeMethods();
         api.setProperties("api/employees/employee/employee.properties");
         api.callAPIExpectSuccess();
@@ -64,6 +70,8 @@ public class APITests implements IAbstractTest {
     @Test()
     @MethodOwner(owner = "aliscovsky")
     public void testDeleteEmployee() {
+    	setCases("ANDK-371");
+    	
     	String employeeId = "1";
     	
         DeleteEmployeeMethods deleteEmployeeMethods = new DeleteEmployeeMethods(employeeId);
@@ -75,6 +83,8 @@ public class APITests implements IAbstractTest {
     @Test()
     @MethodOwner(owner = "aliscovsky")
     public void testUpdateEmployee() {
+    	setCases("ANDK-372");
+    	
     	String employeeId = "1";
     	
         PutEmployeeMethods updateEmployeeMethods = new PutEmployeeMethods(employeeId);
