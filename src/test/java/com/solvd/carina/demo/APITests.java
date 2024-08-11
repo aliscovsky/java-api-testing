@@ -1,8 +1,6 @@
 package com.solvd.carina.demo;
 
 import java.lang.invoke.MethodHandles;
-import java.time.temporal.ChronoUnit;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.slf4j.Logger;
@@ -11,18 +9,13 @@ import org.testng.annotations.Test;
 
 import com.zebrunner.carina.core.IAbstractTest;
 import com.solvd.carina.demo.api.DeleteEmployeeMethods;
-import com.solvd.carina.demo.api.DeleteUserMethod;
 import com.solvd.carina.demo.api.GetEmployeeMethods;
 import com.solvd.carina.demo.api.GetEmployeesMethods;
 import com.solvd.carina.demo.api.PostEmployeeMethods;
-import com.solvd.carina.demo.api.PostUserMethod;
 import com.solvd.carina.demo.api.PutEmployeeMethods;
-import com.zebrunner.carina.api.APIMethodPoller;
 import com.zebrunner.carina.api.apitools.validation.JsonComparatorContext;
 import com.zebrunner.carina.api.apitools.validation.JsonCompareKeywords;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
-import com.zebrunner.carina.core.registrar.tag.Priority;
-import com.zebrunner.carina.core.registrar.tag.TestPriority;
 
 public class APITests implements IAbstractTest {
 
