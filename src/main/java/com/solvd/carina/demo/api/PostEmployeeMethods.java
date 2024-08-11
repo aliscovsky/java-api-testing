@@ -12,6 +12,7 @@ import com.zebrunner.carina.utils.config.Configuration;
 @Endpoint(url = "${base_url}/api/v1/create", methodType = HttpMethodType.POST)
 @RequestTemplatePath(path = "api/employees/employee/_post/rq.json")
 @ResponseTemplatePath(path = "api/employees/employee/_post/rs.json")
+//It returns 200 with a message instead of 201
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
 public class PostEmployeeMethods extends AbstractApiMethodV2 {
 
