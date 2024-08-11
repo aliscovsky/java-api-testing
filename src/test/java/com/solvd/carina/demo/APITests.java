@@ -10,6 +10,8 @@ import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
 import com.zebrunner.carina.core.IAbstractTest;
+import com.solvd.carina.demo.api.DeleteEmployeeMethods;
+import com.solvd.carina.demo.api.DeleteUserMethod;
 import com.solvd.carina.demo.api.GetEmployeeMethods;
 import com.solvd.carina.demo.api.GetEmployeesMethods;
 import com.solvd.carina.demo.api.PostEmployeeMethods;
@@ -52,11 +54,21 @@ public class APITests implements IAbstractTest {
     @MethodOwner(owner = "aliscovsky")
     public void testCreateEmployee() throws Exception {
         LOGGER.info("test");
-        setCases("");
         PostEmployeeMethods api = new PostEmployeeMethods();
         api.setProperties("api/employees/employee/employee.properties");
         api.callAPIExpectSuccess();
         api.validateResponse();
+    }
+    
+    @Test()
+    @MethodOwner(owner = "aliscovsky")
+    public void testDeleteEmployee() {
+    	String employeeId = "1";
+    	
+        DeleteEmployeeMethods deleteEmployeeMethods = new DeleteEmployeeMethods(employeeId);
+        deleteEmployeeMethods.setProperties("api/employees/employee/employee.properties");
+        deleteEmployeeMethods.callAPIExpectSuccess();
+        deleteEmployeeMethods.validateResponse();
     }
 
 }

@@ -17,8 +17,8 @@
 		<classes>
 			<class name="com.solvd.carina.demo.APITests" />
 				<methods>
-	               
-	                <include name="testCreateEmployee"/>
+
+	                <include name="testDeleteEmployee"/>
             	</methods>
 		</classes>
 	</test>
