@@ -1,0 +1,10 @@
+/L10N/
+/_config.properties
+/_database.properties
+/_email.properties
+/_testdata.properties
+/agent.properties
+/browserstack/
+/com/
+/mappers/
+/mybatis-config.xml

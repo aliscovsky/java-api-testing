@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "data":
+	{
+	  "id": "regex:[\\d]",
+	  "employee_name": "type:String",
+	  "employee_salary": 320800,
+	  "employee_age": "regex:^(1[89]|[2-7][0-9]|80)$",
+      "profile_image": ""
+	},
+  "message": "skip"
+}
